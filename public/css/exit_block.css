@@ -1,0 +1,49 @@
+.exit_wrapper{
+    display: inline-flex;
+    color: white;
+    background: #2368b8;
+    margin-top: 30px;
+    height: 40px;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    width: 80px;
+    padding: 0 7px;
+    overflow: hidden;
+    opacity: 0.6;
+}
+.exit_wrapper p{
+    opacity: 1;
+    font-size: 25px;
+    margin-left: 8px;
+}
+.exit_wrapper:hover{
+    height: 50px;
+    width: 200px;
+    transition: 0.3s ease;
+    opacity: 1;
+    box-shadow: 0px 0px 6px 2px #a1a1a1;
+}
+.exit_txt{
+    background: #4123b8;
+    padding: 5px;
+    transition: 0.2s;
+    opacity: 0;
+    cursor: pointer;
+}
+.exit_txt:hover{
+    padding: 10px;
+    transition: 0.2s;
+    font-size: 17px;
+}
+.exit_wrapper:hover > span{
+   opacity: 1;
+}
+.a_name{
+    color: white;
+}
+.a_name:hover{
+    text-decoration: underline;
+}
+

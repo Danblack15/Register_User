@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/login.css">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script src="../public/scripts/exit_block.js"></script>
+  <link rel="stylesheet" href="../public/css/exit_block.css">
+</head>
+<body>
+    <%- include ('blocks/header'); -%>
+
+    <%- include ('blocks/exit_block'); -%>
+
+    <p class="name_form">Вход</p>
+    <div class="wrapper">
+        <form action="/login" method="post">
+            <div class="osn_data">
+                <label for="">Введите данные</label>
+                <input type="email" name="email" placeholder="Почта" class="txt" id="email" required>
+                <input type="password" name="password" placeholder="Пароль" class="txt" required>
+            </div>
+            <div class="sub">
+                <input type="submit" placeholder="Вход">
+            </div>
+        </form>
+    </div>
+
+
+    <script src="public/scripts/jquery.cookie.js"></script>
+    <script>
+        if ($.cookie('id')){
+            $("#email").val($.cookie('id'));
+        }
+    </script>
+</body>
+</html>

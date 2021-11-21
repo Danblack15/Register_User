@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ваши данные</title>
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/data.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="public/scripts/data.js"></script>
+  <script src="../public/scripts/exit_block.js"></script>
+  <link rel="stylesheet" href="../public/css/exit_block.css">
+</head>
+<body>
+    <%- include ('blocks/header'); -%>
+
+    <%- include ('blocks/exit_block'); -%>
+
+    <p class="name_form">Регистрация</p>
+    <div class="wrapper">
+        <form action="/data" method="post">
+            <div class="osn_data">
+                <label for="">Основные данные:</label>
+                <input type="text" name="name" placeholder="Имя" class="txt" required>
+                <input type="text" name="surname" placeholder="Фамилия" class="txt" required>
+                <input type="number" name="old" placeholder="Возраст" class="txt" required>
+            </div>
+            <div>
+                <label for="">Личные данные:</label>
+                <input type="email" name="email" placeholder="Почта" class="txt" required>
+                <input type="password" name="password" placeholder="Пароль" class="txt" required>
+                <input type="password" name="password_2" placeholder="Повторите Пароль" class="txt" required>
+            </div>
+            <div class="sub">
+                <input type="submit" placeholder="Отправить" class="btn">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

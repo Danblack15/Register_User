@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+li{
+    list-style-type: none;
+}
+a{
+    list-style-type: none;
+    text-decoration: none;
+}
+header{
+    max-width: 100vw;
+    background: #7726b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50000;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+header ul li{
+    padding: 10px 20px;
+    color: silver;
+    transition: 0.2s;
+}
+header ul li:hover{
+    background: #441866;
+    color: white;
+    transition: 0.2s;
+}

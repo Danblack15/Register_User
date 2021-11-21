@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="public/scripts/main.js"></script>
+  <script src="../public/scripts/exit_block.js"></script>
+  <link rel="stylesheet" href="../public/css/exit_block.css">
+
+</head>
+<body>
+    <%- include ('blocks/header'); -%>
+
+    <%- include ('blocks/exit_block'); -%>
+    
+    <div class="pod_header">
+        <p>Всё обо всём</p>
+        <p>Всё ты можешь</p>
+        <p>Проснись</p>
+        <p>Привет</p>
+    </div>
+    <div class="center_block">
+        <div>
+            <a href="/login" class="reg"><p class="reg_p">Вход</p></a>
+            <a href="/data" class="reg"><p class="reg_p">Регистрция</p></a>
+        </div>
+        <div>
+            <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без з.</p>
+            <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+        </div>
+    </div>
+    <div class="general_name_content">
+        <p>Информационный портал</p>
+    </div>
+    <div class="content">
+        <%- data -%>
+    </div>
+
+    <script>
+        var tx = document.getElementsByTagName('textarea');//РАСТЯГИВАЕМ_textarea
+    for (var i = 0; i < tx.length; i++) {
+        tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+
+        tx[i].addEventListener("input", OnInput, false);
+        }
+        function OnInput() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';//////console.log(this.scrollHeight);
+    }
+    </script>
+</body>
+</html>

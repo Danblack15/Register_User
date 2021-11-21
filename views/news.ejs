@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Личный кабинет</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="../public/scripts/exit_block.js"></script>
+    <link rel="stylesheet" href="../public/css/exit_block.css">
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/news.css">
+</head>
+
+<body>
+    <%- include ('blocks/header'); -%>
+    <%- include ('blocks/exit_block'); -%>
+
+    <section>
+        <div class="block_1">
+            <div class="l_b1">
+                <div>
+                    <form action="/load_img" enctype="multipart/form-data" method="post">
+                        <span class="face">
+                            <input type="file" accept="image/jpeg,image/png" class="file" name="filedata">
+                        </span>
+                            <input type="submit" value="загрузить">
+                    </form>
+                    <p class="name">Имя</p>
+                </div>
+            </div>
+            <div class="l_b2">
+                <div>
+                    <p>Ваш уникальный id: <span class="id">***</span></p>
+                    <p>Логин: <span class="login">***</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="block_2">
+            <div class="pod_block_2">
+                <p>Напиши Пост!</p>
+                <form action="/post" method="post" class="postik">
+                  <textarea required name="text" class="textarea_1" maxlength="3000"></textarea>
+                  <input type="submit" placeholder="Отправить" class="submit" name="submit">
+                </form>
+            </div>
+        </div>
+        <div class="general_name_my_posts">
+            <p>Мои посты</p>
+        </div>
+        <div class="block_3">
+            <%- data -%>
+        </div>
+    </section>
+
+    
+    <script>
+        jQuery(function() {
+            let login = $.cookie('id');
+            let code = $.cookie('code');
+
+            $('.login').html(login);
+            $('.id').html(code);
+        })
+
+            /*ДЛЯ высоты TEXTAREA*/
+    function hieght_post(){
+            var tx = document.getElementsByClassName('post');
+        for (var i = 0; i < tx.length; i++) {
+            tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+
+            tx[i].addEventListener("input", OnInput, false);
+            }
+            function OnInput() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        }
+    }
+    hieght_post();
+
+
+    $('.postik').on('submit', function(e){
+        let inp = $('.textarea_1').val();
+        let k = 1;
+        
+
+        async function serth(){
+            for (let i = 0; i < inp.length-1; i++) {
+                if (inp[i] == ' ') {
+                    k++;
+                    console.log(inp[i])
+                }
+            }
+        }
+
+        async function sub(){
+            await serth();
+            console.log(inp.length);
+            console.log(k);
+            if (!$.trim($(".textarea_1").val())){
+                alert('Пусто');
+            }else{
+                $(this).submit();
+            }
+        }
+        sub();
+    });
+
+    </script>
+</body>
+
+</html>
